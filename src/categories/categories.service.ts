@@ -44,6 +44,23 @@ export class CategoriesService {
       include: {
         parent: true,
         children: true,
+        products: {
+          where: { isActive: true },
+          select: {
+            id: true,
+            name: true,
+            sku: true,
+            barcode: true,
+            description: true,
+            costPrice: true,
+            sellingPrice: true,
+            stockQuantity: true,
+            minStockLevel: true,
+            unit: true,
+            isActive: true,
+          },
+          orderBy: { name: 'asc' },
+        },
         _count: { select: { products: true } },
       },
     });

@@ -11,11 +11,13 @@ import { CustomersModule } from './customers/customers.module';
 import { SalesModule } from './sales/sales.module';
 import { ReturnsModule } from './returns/returns.module';
 import { ReportsModule } from './reports/reports.module';
+import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     PrismaModule,
+    HealthModule,
     UsersModule,
     AuthModule,
     CategoriesModule,
